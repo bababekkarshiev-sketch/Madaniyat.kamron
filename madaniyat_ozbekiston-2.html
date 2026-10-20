@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O‘zbekistonning qadimiy obidalari, milliy hunarmandchiligi, kulolchilik va raqs san’ati haqida.">
+  <title>Madaniyat — O‘zbekiston merosi</title>
+  <style>
+    :root {
+      --blue: #0757a6;
+      --dark-blue: #06356b;
+      --light-blue: #dceeff;
+      --page: #f0f7ff;
+      --text: #17385f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--page);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--dark-blue), var(--blue));
+      color: white;
+      text-align: center;
+      padding: 30px 14px;
+    }
+    header h1 { margin: 0 0 6px; }
+    header p { margin: 0; }
+    nav {
+      background: white;
+      padding: 13px 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px #00000012;
+    }
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      padding: 34px 18px;
+      text-align: center;
+      background: var(--light-blue);
+    }
+    .hero h2 { margin-top: 0; }
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .section-title {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--blue);
+      margin: 28px 0 0;
+      scroll-margin-top: 75px;
+    }
+    .card {
+      background: white;
+      margin: 0;
+      padding: 16px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px #00000012;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 18px #00000018;
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      background: #e5edf5;
+    }
+    .card h2 { color: var(--blue); margin-bottom: 5px; }
+    .card p { margin-top: 8px; }
+    .details { display: none; }
+    .details.show { display: block; }
+    button {
+      background: var(--blue);
+      color: white;
+      border: none;
+      padding: 11px 15px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    button:hover { background: var(--dark-blue); }
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 22px 14px;
+      margin-top: 28px;
+    }
+    footer p { margin: 5px 0; }
+    @media (max-width: 420px) {
+      .card img { height: 195px; }
+      nav { gap: 7px 12px; }
+      nav a { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>🇺🇿 Madaniyat</h1>
+  <p>O‘zbekistonning boy tarixiy merosi</p>
+</header>
+
+<nav aria-label="Asosiy menyu">
+  <a href="#tarix">Tarix</a>
+  <a href="#joylar">Qadimiy joylar</a>
+  <a href="#hunarmand">Hunarmandchilik</a>
+  <a href="#kulolchilik">Kulolchilik</a>
+  <a href="#raqs">Milliy raqs</a>
+</nav>
+
+<section class="hero">
+  <h2>Ajdodlar merosini kashf eting!</h2>
+  <p>Tarixiy shaharlar, milliy an’analar va hunarmandchilik bilan tanishing.</p>
+</section>
+
+<main>
+  <h2 class="section-title" id="tarix">📜 Tarixiy shaharlar</h2>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Registan_01.jpg"
+         alt="Samarqanddagi Registon maydoni" loading="lazy">
+    <h2>Samarqand</h2>
+    <p>Buyuk Ipak yo‘lining qadimiy shahri.</p>
+    <div class="details">
+      <p>Samarqand ko‘p asrlik tarixi, Registon maydoni, Shohi Zinda va Go‘ri Amir maqbarasi bilan mashhur. Shahar ilm-fan, savdo va me’morchilik rivojida muhim o‘rin tutgan.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Po-i-Kalyan_complex_Bukhara.jpg"
+         alt="Buxorodagi tarixiy me’morchilik" loading="lazy">
+    <h2>Buxoro</h2>
+    <p>Qadimiy madrasalar va tarixiy obidalar shahri.</p>
+    <div class="details">
+      <p>Buxoro Ark qal’asi, Poi Kalon majmuasi va Ismoil Somoniy maqbarasi bilan tanilgan. Shahar asrlar davomida ilm-fan, savdo va hunarmandchilik markazlaridan biri bo‘lgan.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Itchan_Kala_Khiva.jpg"
+         alt="Xivadagi Ichan qal’a" loading="lazy">
+    <h2>Xiva</h2>
+    <p>Ichan qal’a va Kalta Minor bilan mashhur.</p>
+    <div class="details">
+      <p>Xiva Xorazm vohasidagi qadimiy shahardir. Ichan qal’a tarixiy markaz bo‘lib, unda ko‘plab madrasalar, masjidlar va me’moriy yodgorliklar saqlangan.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <h2 class="section-title" id="joylar">🏛️ Qadimiy joylar</h2>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Registan_01.jpg"
+         alt="Registon maydonidagi uch madrasa" loading="lazy">
+    <h2>Registon maydoni</h2>
+    <p>Samarqandning eng taniqli tarixiy maskanlaridan biri.</p>
+    <div class="details">
+      <p>Registon Ulug‘bek, Sherdor va Tillakori madrasalaridan tashkil topgan. Uning moviy koshinlari, naqshlari va ulkan peshtoqlari o‘zbek me’morchiligining go‘zal namunalaridir.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shah-i-Zinda_devoridagi_rangli_koshinlar.jpg"
+         alt="Shohi Zinda majmuasidagi rangli koshinlar" loading="lazy">
+    <h2>Shohi Zinda</h2>
+    <p>Rang-barang koshinlari bilan mashhur maqbaralar majmuasi.</p>
+    <div class="details">
+      <p>Shohi Zinda ko‘plab maqbaralardan iborat. Binolar ko‘k va firuza rangli koshinlar hamda nafis naqshlar bilan bezatilgan. U Samarqandning muhim tarixiy yodgorliklaridan biridir.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bibi-Khanym_Mosque_Samarkand.jpg"
+         alt="Samarqanddagi Bibixonim masjidi" loading="lazy">
+    <h2>Bibixonim masjidi</h2>
+    <p>Samarqandning ulug‘vor tarixiy yodgorligi.</p>
+    <div class="details">
+      <p>Bibixonim masjidi Amir Temur davrida bunyod etilgan. U katta peshtoqlari, gumbazlari va bezaklari bilan mashhur hamda shahar tarixida muhim o‘rin tutadi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ark_of_Bukhara.jpg"
+         alt="Buxoro Ark qal’asi" loading="lazy">
+    <h2>Buxoro Ark qal’asi</h2>
+    <p>Buxoro hukmdorlarining qadimiy qarorgohi.</p>
+    <div class="details">
+      <p>Ark qal’asida turli davrlarda davlat boshqaruvi va saroy hayoti kechgan. Bugungi kunda u Buxoroning muhim tarixiy yodgorliklaridan biri hisoblanadi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <h2 class="section-title" id="hunarmand">🧵 Milliy hunarmandchilik</h2>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atlas_fabric_Uzbekistan.jpg"
+         alt="O‘zbek atlas matosi" loading="lazy">
+    <h2>Atlas va adras</h2>
+    <p>Rang-barang naqshlarga ega milliy matolar.</p>
+    <div class="details">
+      <p>Atlas va adras o‘zbek an’anaviy matolaridir. Marg‘ilon bu matolarni to‘qish an’analari bilan mashhur. Atlas va adrasdan milliy kiyimlar hamda turli bezak buyumlari tayyorlanadi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Uzbek_suzani.jpg"
+         alt="O‘zbek milliy kashtachiligi" loading="lazy">
+    <h2>Kashtachilik va zardo‘zlik</h2>
+    <p>Mato, ip va zar bilan yaratiladigan bezak san’ati.</p>
+    <div class="details">
+      <p>Kashtachilikda matoga rangli iplar bilan naqsh tikiladi. Zardo‘zlikda zar iplar yordamida kiyim va buyumlar bezatiladi. Buxoro zardo‘zlik an’analari bilan alohida tanilgan.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Traditional_Uzbek_wood_carving.jpg"
+         alt="An’anaviy yog‘och o‘ymakorligi" loading="lazy">
+    <h2>Yog‘och o‘ymakorligi</h2>
+    <p>Yog‘och yuzasiga naqsh va bezaklar tushirish hunari.</p>
+    <div class="details">
+      <p>Ustalar yog‘och eshiklar, ustunlar va boshqa buyumlarni murakkab naqshlar bilan bezaydilar. Bu hunar sabr, aniqlik va katta mahorat talab qiladi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <h2 class="section-title" id="kulolchilik">🏺 Kulolchilik san’ati</h2>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lagan2024.jpg"
+         alt="Rishton kulolchiligiga oid bezakli lagan" loading="lazy">
+    <h2>Rishton kulolchilik maktabi</h2>
+    <p>Farg‘ona vodiysining mashhur hunarmandchiligi.</p>
+    <div class="details">
+      <p>Rishton rangli sirlangan sopol buyumlari bilan mashhur. Ustalar kosa, lagan va ko‘zalarni an’anaviy naqshlar bilan bezaydilar. Bu hunar ko‘p asrlik tajriba va mahoratga tayanadi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kulol_charxida_idish_shakllantirish.png"
+         alt="Kulol charxida sopol idish yasash" loading="lazy">
+    <h2>Loydan buyum yasash</h2>
+    <p>Kulol qo‘li bilan shakllantiriladigan nafis buyumlar.</p>
+    <div class="details">
+      <p>Kulol loyga kerakli shaklni beradi. Keyin buyum quritiladi, bezatiladi va maxsus pechda pishiriladi. Kulolchilik ijodkorlik, sabr va aniq harakatlarni talab qiladi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sopol_idishga_naqsh_chizayotgan_kulol.png"
+         alt="Kulol sopol idishga naqsh chizmoqda" loading="lazy">
+    <h2>Sopol idishlarni bezash</h2>
+    <p>Naqsh va ranglar bilan buyumga o‘ziga xos ko‘rinish berish.</p>
+    <div class="details">
+      <p>Kulollar sopol buyumlarga gul, geometrik shakl va an’anaviy naqshlar chizadilar. Rishton kulolchiligida ko‘k va firuza ranglar ko‘p uchraydi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <h2 class="section-title" id="raqs">💃 O‘zbek milliy raqslari</h2>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lazgi_dance_Khiva_Uzbekistan.jpg"
+         alt="Xorazm Lazgi raqsi" loading="lazy">
+    <h2>Xorazm Lazgisi</h2>
+    <p>Jo‘shqin harakatlarga boy mashhur raqs.</p>
+    <div class="details">
+      <p>Lazgi Xorazm xalqining taniqli raqs an’anasidir. Unda qo‘l, yelka va tana harakatlari musiqa bilan uyg‘unlashadi. Xorazm Lazgisi UNESCOning nomoddiy madaniy merosi ro‘yxatiga kiritilgan.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Andijan_Polka_dance.jpg"
+         alt="Andijon polkasi raqs ijrosi" loading="lazy">
+    <h2>Andijon polkasi</h2>
+    <p>Quvnoq ohang va chaqqon harakatlarga ega raqs.</p>
+    <div class="details">
+      <p>Andijon polkasi o‘zbek musiqiy va raqs an’analarining taniqli namunalaridan biridir. Uning sho‘x ohangi va chaqqon harakatlari bayram hamda madaniy tadbirlarga ko‘tarinki kayfiyat bag‘ishlaydi.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+
+  <article class="card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Registondagi_an’anaviy_folklor_chiqishi.jpg"
+         alt="Registondagi milliy libosli folklor ijrochilari" loading="lazy">
+    <h2>Milliy folklor raqslari</h2>
+    <p>Milliy libos, musiqa va harakatlar uyg‘unligi.</p>
+    <div class="details">
+      <p>O‘zbek folklor chiqishlarida xalq musiqasi, milliy liboslar va ifodali harakatlar muhim o‘rin tutadi. Har bir hududning o‘ziga xos ijro uslubi va an’analari mavjud.</p>
+    </div>
+    <button type="button" onclick="toggleInfo(this)">Ma’lumotni ko‘rish</button>
+  </article>
+</main>
+
+<footer>
+  <p>🇺🇿 O‘zbekiston madaniyati — bebaho merosimiz</p>
+  <p>Tariximizni bilaylik va an’analarimizni asraylik!</p>
+</footer>
+
+<script>
+  function toggleInfo(button) {
+    const details = button.previousElementSibling;
+    if (!details || !details.classList.contains("details")) return;
+
+    const isOpen = details.classList.toggle("show");
+    button.textContent = isOpen
+      ? "Ma’lumotni yashirish"
+      : "Ma’lumotni ko‘rish";
+    button.setAttribute("aria-expanded", String(isOpen));
+  }
+</script>
+</body>
+</html>
